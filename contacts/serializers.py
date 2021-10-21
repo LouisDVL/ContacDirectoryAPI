@@ -9,16 +9,18 @@ class UserSerialized(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('first_name', 'last_name', 'email', 'phoneNumber')
+        fields = ('id', 'first_name', 'last_name', 'email', 'phoneNumber')
 
 
 class EmailSerialized(serializers.ModelSerializer):
+    user = serializers.StringRelatedField(many=False, required=False)
+
     class Meta:
         model = Email
-        fields = ('email', 'is_active', 'user')
+        fields = ('id', 'email', 'is_active', 'user')
 
 
 class PhoneNumberSerialized(serializers.ModelSerializer):
     class Meta:
         model = PhoneNumber
-        fields = ('number', 'is_active', 'user')
+        fields = ('id', 'number', 'is_active', 'user')
