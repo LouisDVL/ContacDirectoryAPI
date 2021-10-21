@@ -4,8 +4,8 @@ from rest_framework import serializers
 
 
 class UserSerialized(serializers.ModelSerializer):
-    email = serializers.StringRelatedField(many=True)
-    phoneNumber = serializers.StringRelatedField(many=True)
+    email = serializers.StringRelatedField(many=True, required=False)
+    phoneNumber = serializers.StringRelatedField(many=True, required=False)
 
     class Meta:
         model = User
