@@ -20,7 +20,9 @@ class UserViewSerialized(serializers.ModelSerializer):
 
 
 class EmailSerialized(serializers.ModelSerializer):
-    user = UserViewSerialized(many=False, required=False)
+    def to_representation(self, instance):
+        self.fields['user'] = UserViewSerialized(read_only=True)
+        return super().to_representation(instance)
 
     class Meta:
         model = Email
