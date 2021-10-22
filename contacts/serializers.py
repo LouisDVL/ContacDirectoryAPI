@@ -4,9 +4,24 @@ from .models import User, Email, PhoneNumber
 from rest_framework import serializers
 
 
+class EmailViewSerialized(serializers.ModelSerializer):
+    class Meta:
+        model = Email
+        fields = ('id', 'email', 'is_active')
+
+
+class PhoneNumberViewSerialized(serializers.ModelSerializer):
+    class Meta:
+        model = PhoneNumber
+        fields = ('id', 'number', 'is_active')
+
+
 class UserSerialized(serializers.ModelSerializer):
-    email = serializers.StringRelatedField(many=True, required=False)
-    phoneNumber = serializers.StringRelatedField(many=True, required=False)
+    def to_representation(self, instance):
+        self.fields['email'] = EmailViewSerialized(many=True, read_only=True)
+        self.fields['phoneNumber'] = PhoneNumberViewSerialized(
+            many=True, read_only=True)
+        return super().to_representation(instance)
 
     class Meta:
         model = User
