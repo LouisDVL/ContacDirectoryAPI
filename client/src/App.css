@@ -1,38 +1,86 @@
-.App {
-  text-align: center;
+/* Uses a mobile first design */
+
+/* General styling */
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* navbar styling */
+.navbar {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin: 0;
+  color: white;
+  background-color: #212121;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar a {
+  float: left;
+  display: block;
+  text-align: left;
+  font-size: 1rem;
+  padding: 0.5rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar > .navlink {
+  display: none;
+}
+
+#icon {
+  float: right;
+  display: block;
+  margin-right: 1rem;
+}
+
+.navbar.responsive {
+  position: relative;
+}
+
+.navbar.responsive #icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.navbar > .links {
+  display: none;
+}
+
+.navbar.responsive > .links {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar > a > h1 {
+  margin: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* media queries */
+/* tablets */
+/* computer */
+@media (min-width: 992px) {
+  #icon {
+    display: none;
   }
-  to {
-    transform: rotate(360deg);
+
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .navbar.responsive > .links {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .navbar > .links {
+    display: flex;
+    align-items: center;
   }
 }
