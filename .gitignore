@@ -1,0 +1,4 @@
+data/
+contacts/__pycache__/
+contacts/migrations/
+ContactDirectory/__pycache__/
