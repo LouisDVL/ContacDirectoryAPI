@@ -88,11 +88,10 @@ WSGI_APPLICATION = 'ContactDirectory.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ContactDirectory',
+        'NAME': 'postgres',
         'USER': 'postgres',
-        'PASSWORD': 'Password',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'HOST': 'db',
+        'PORT': 5432,
     }
 }
 
