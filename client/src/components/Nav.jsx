@@ -21,7 +21,7 @@ function Nav() {
   return (
     <div className={navClass} id="navbar">
       <div>
-        <a href="#" className="brand">
+        <a href="/" className="brand">
           <h1>Home</h1>
         </a>
         <a className="icon" id="icon" onClick={navToggle}>
@@ -31,13 +31,13 @@ function Nav() {
         </a>
       </div>
       <div className="links">
-        <a href="#" className="navlink">
+        <a href="/" className="navlink">
           Users
         </a>
-        <a href="#" className="navlink">
+        <a href="/email" className="navlink">
           Emails
         </a>
-        <a href="#" className="navlink">
+        <a href="/phone" className="navlink">
           Phone Numbers
         </a>
       </div>
