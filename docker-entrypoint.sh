@@ -1,3 +1,5 @@
+#!/bin/sh
+
 echo "waiting for postgres"
 ./wait-for db:5432
 

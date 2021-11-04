@@ -2,15 +2,16 @@ version: "3.9"
 
 services:
   db:
-    image: postgres
+    image: postgres:alpine3.14
     volumes:
       - ./data/db:/var/lib/postgresql/data
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-  web:
+  backend:
     restart: always
+    command: ./docker-entrypoint.sh
     build: .
     volumes:
       - .:/app
@@ -18,3 +19,12 @@ services:
       - "8000:8000"
     depends_on:
       - db
+  frontend:
+    build: ./client
+    command: ./docker-entrypoint.sh
+    volumes:
+      - ./client:/app/
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
