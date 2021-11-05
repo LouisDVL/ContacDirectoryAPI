@@ -6,6 +6,12 @@ a {
   text-decoration: none;
 }
 
+/* Container styling */
+.container {
+  display: flex;
+  justify-content: center;
+}
+
 /* navbar styling */
 .navbar {
   height: 100%;
@@ -58,6 +64,17 @@ a {
 
 .navbar > a > h1 {
   margin: 0;
+}
+
+/* Users Page */
+table {
+  border-collapse: collapse;
+}
+
+td,
+th {
+  padding: 1rem;
+  border: 1px solid black;
 }
 
 /* media queries */

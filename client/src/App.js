@@ -11,14 +11,17 @@ function App() {
     <div>
       <Nav />
       <div className="App">
-        <h1>
-          Hello welcome to my first python django react Full stack applications
-          <Switch>
-            <Route exact path="/" component={UsersTable} />
-            <Route path="/phone" component={PhoneNumberTable} />
-            <Route path="/email" component={EmailTable} />
-          </Switch>
-        </h1>
+        <div className="container">
+          <h1>
+            Hello welcome to my first python django react Full stack
+            applications
+            <Switch>
+              <Route exact path="/" component={UsersTable} />
+              <Route path="/phone" component={PhoneNumberTable} />
+              <Route path="/email" component={EmailTable} />
+            </Switch>
+          </h1>
+        </div>
       </div>
     </div>
   );
